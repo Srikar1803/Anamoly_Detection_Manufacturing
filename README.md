@@ -5,6 +5,6 @@ It trains autoencoders to identify and localize surface defects on industrial pr
 
 ## Setup
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/Srikar1803/Anamoly_Detection_Manufacturing.git>
 cd AnomalyDetection_Manufacturing
 pip install -r requirements.txt
