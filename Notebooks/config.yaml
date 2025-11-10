@@ -1,0 +1,43 @@
+# ================= PATHS / INDEX =================
+index_csv: "mvtec_outputs/mvtec_index.csv"  # (category, split, label, path, width, height, mode)
+out_dir: "runs"
+
+# ================= DEFAULTS (can be overridden per-category) =================
+image_size: 384
+batch_size: 16
+num_workers: 0
+val_split: 0.10
+augment_prob: 0.50
+
+# ================= MODEL =================
+base_channels: 32
+latent_dim: 128
+
+# ================= TRAIN =================
+epochs: 50
+lr: 0.001           # unquoted numbers (floats/ints)
+weight_l1: 0.7
+weight_ssim: 0.3
+device: "cuda"      # "cuda" or "cpu"
+seed: 42
+
+# ================= SCORING =================
+topk_frac: 0.02              # fraction of highest per-pixel errors to average
+threshold_percentile: 95     # percentile of val_good scores for thresholding
+
+# ================= PER-CATEGORY OVERRIDES =================
+# Only listed keys here override the defaults above
+per_category:
+  carpet:     { image_size: 448, topk_frac: 0.01 }
+  grid:       { image_size: 448, topk_frac: 0.01 }
+  tile:       { image_size: 448, topk_frac: 0.015 }
+  bottle:     { image_size: 512, topk_frac: 0.01 }
+  cable:      { image_size: 512, topk_frac: 0.015 }
+  metal_nut:  { image_size: 448, topk_frac: 0.015 }
+  transistor: { image_size: 512, topk_frac: 0.01 }
+  zipper:     { image_size: 448, topk_frac: 0.015 }
+  pill:       { image_size: 448, topk_frac: 0.015 }
+  toothbrush: { image_size: 448, topk_frac: 0.015 }
+  leather:    { image_size: 384, topk_frac: 0.025 }
+  wood:       { image_size: 384, topk_frac: 0.025 }
+  hazelnut:   { image_size: 384, topk_frac: 0.025 }
