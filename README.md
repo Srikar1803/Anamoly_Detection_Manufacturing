@@ -32,6 +32,7 @@ The system includes:
 
 ## 2. Repository Structure
 
+```text
 Anamoly_Detection_Manufacturing/
 │
 ├── Docs/                 # Architecture diagrams, report PDFs, interface screenshots
