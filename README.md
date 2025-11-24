@@ -46,5 +46,6 @@ Anamoly_Detection_Manufacturing/
 ├── src/                  # Core training / evaluation code (models, dataloaders, utils)
 │   ├── models/
 │   ├── datasets/
+    ├── requirements.txt
 │   └── ...
 └── README.md
